@@ -19,4 +19,15 @@ class CheeseController extends Controller
 
     }
 
+    public function show($id)
+    {
+        $cheese = Cheese::find($id);
+        if(!$cheese) {
+            return response()->json(["message" => "Les souris ont mangé tout ce fromage.."],404);
+        }
+        return response()->json([
+            'cheese' => $cheese
+        ], 200);
+    }
+
 }

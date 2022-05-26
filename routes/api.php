@@ -22,4 +22,5 @@ Route::middleware('auth:sanctum')->post('auth/me', [\App\Http\Controllers\ApiTok
 Route::middleware('auth:sanctum')->post('auth/logout', [\App\Http\Controllers\ApiTokenController::class, 'logout']);
 
 Route::get('/cheeses', [CheeseController::class, 'index']);
+Route::get('/cheeses/{id}', [CheeseController::class, 'show']);
 
