@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CheeseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +21,5 @@ Route::post('auth/login', [\App\Http\Controllers\ApiTokenController::class, 'log
 Route::middleware('auth:sanctum')->post('auth/me', [\App\Http\Controllers\ApiTokenController::class, 'me']);
 Route::middleware('auth:sanctum')->post('auth/logout', [\App\Http\Controllers\ApiTokenController::class, 'logout']);
 
-Route::middleware('auth:sanctum')->apiResource('cheeses', \App\Http\Controllers\TaskController::class );
+Route::get('/cheeses', [CheeseController::class, 'index']);
+
