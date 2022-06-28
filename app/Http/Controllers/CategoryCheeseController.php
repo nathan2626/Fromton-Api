@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class CategoryCheeseController extends Controller
 {
+    /**
+ * @OA\Get(
+ *     path="/api/resource.json",
+ *     @OA\Response(response="200", description="An example resource")
+ * )
+ */
     public function index()
     {
         $categories = Categories_cheese::all();
